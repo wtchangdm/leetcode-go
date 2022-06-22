@@ -21,12 +21,12 @@ func longestConsecutive(nums []int) int {
 		}
 
 		currentStreak := 1
-		_, nextExists := set[current+1]
+		_, hasNext := set[current+1]
 
-		for nextExists {
+		for hasNext {
 			current++
 			currentStreak++
-			_, nextExists = set[current+1]
+			_, hasNext = set[current+1]
 		}
 
 		if currentStreak > longestStreak {
