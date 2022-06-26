@@ -5,7 +5,7 @@
 
 ![1x engineer][4]
 
-### Study Notes
+### Study Study Notes
 
 [Leetcode Notes (Google Sheet)][1]. Inspired by neetcode ([sheet][5], [site][6]).
 
