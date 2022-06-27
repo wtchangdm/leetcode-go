@@ -8,15 +8,15 @@ func TestCodeC(t *testing.T) {
 
 	for _, v := range []struct {
 		input  []string
-		result []string
+		answer []string
 	}{
-		{input: []string{"I", "am", "test"}, result: []string{"I", "am", "test"}},
-		{input: []string{"", ""}, result: []string{"", ""}},
+		{input: []string{"I", "am", "test"}, answer: []string{"I", "am", "test"}},
+		{input: []string{"", ""}, answer: []string{"", ""}},
 	} {
-		answer := codec.Decode(codec.Encode(v.input))
-		for i := range answer {
-			if answer[i] != v.result[i] {
-				t.Errorf("error: %s != %s", answer[i], v.result[i])
+		result := codec.Decode(codec.Encode(v.input))
+		for i := range result {
+			if result[i] != v.answer[i] {
+				t.Errorf("error: %s != %s", result[i], v.answer[i])
 			}
 		}
 	}

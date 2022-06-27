@@ -6,18 +6,18 @@ import (
 
 func TestThreeSum(t *testing.T) {
 	for _, v := range []struct {
-		input          []int
-		expectedResult [][]int
+		input  []int
+		answer [][]int
 	}{
-		{input: []int{-1, 0, 1, 2, -1, -4}, expectedResult: [][]int{{-1, -1, 2}, {-1, 0, 1}}},
-		{input: []int{}, expectedResult: [][]int{}},
-		{input: []int{0}, expectedResult: [][]int{}},
+		{input: []int{-1, 0, 1, 2, -1, -4}, answer: [][]int{{-1, -1, 2}, {-1, 0, 1}}},
+		{input: []int{}, answer: [][]int{}},
+		{input: []int{0}, answer: [][]int{}},
 	} {
-		result := threeSum(v.input)
-		for i := range v.expectedResult {
-			for j := range v.expectedResult[i] {
-				if v.expectedResult[i][j] != result[i][j] {
-					t.Errorf("error: %d != %d", v.expectedResult[i], result[i])
+		answer := threeSum(v.input)
+		for i := range v.answer {
+			for j := range v.answer[i] {
+				if v.answer[i][j] != answer[i][j] {
+					t.Errorf("error: %d != %d", v.answer[i], answer[i])
 				}
 			}
 		}

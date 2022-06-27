@@ -4,7 +4,7 @@ import "testing"
 
 func TestGeneratePascalsTriangle(t *testing.T) {
 	input := 5
-	expectedResult := [][]int{
+	answer := [][]int{
 		{1},
 		{1, 1},
 		{1, 2, 1},
@@ -12,12 +12,12 @@ func TestGeneratePascalsTriangle(t *testing.T) {
 		{1, 4, 6, 4, 1},
 	}
 
-	answer := generatePascalsTriangle(input)
+	result := generatePascalsTriangle(input)
 
-	for i := range answer {
-		for j := range answer[i] {
-			if answer[i][j] != expectedResult[i][j] {
-				t.Errorf("error: %d != %d", answer[i][j], expectedResult[i][j])
+	for i := range result {
+		for j := range result[i] {
+			if result[i][j] != answer[i][j] {
+				t.Errorf("error: %d != %d", result[i][j], answer[i][j])
 			}
 		}
 	}

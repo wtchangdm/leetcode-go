@@ -7,13 +7,13 @@ import (
 func TestIsValidParentheses(t *testing.T) {
 	for _, v := range []struct {
 		input  string
-		result bool
+		answer bool
 	}{
-		{input: "()[]{}", result: true},
-		{input: "(]", result: false},
+		{input: "()[]{}", answer: true},
+		{input: "(]", answer: false},
 	} {
 
-		if isValidParentheses(v.input) != v.result {
+		if isValidParentheses(v.input) != v.answer {
 			t.Error("failed", v)
 		}
 	}

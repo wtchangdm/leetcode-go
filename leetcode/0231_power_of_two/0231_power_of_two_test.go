@@ -5,15 +5,15 @@ import "testing"
 func TestIsPowerOfTwo(t *testing.T) {
 	for _, v := range []struct {
 		input  int
-		result bool
+		answer bool
 	}{
-		{input: -5, result: false},
-		{input: 1, result: true},
-		{input: 7, result: false},
-		{input: 8, result: true},
+		{input: -5, answer: false},
+		{input: 1, answer: true},
+		{input: 7, answer: false},
+		{input: 8, answer: true},
 	} {
-		if isPowerOfTwo(v.input) != v.result {
-			t.Errorf("error: result of %v != %v", v.input, v.result)
+		if isPowerOfTwo(v.input) != v.answer {
+			t.Errorf("error: answer of %v != %v", v.input, v.answer)
 		}
 	}
 }

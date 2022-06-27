@@ -36,6 +36,6 @@ func TestLowestCommonAncestor(t *testing.T) {
 	}
 
 	if lowestCommonAncestor(root, root.Left.Right.Right, root.Right.Left) != root {
-		t.Errorf("error: answer is not %d", root.Val)
+		t.Errorf("error: result is not %d", root.Val)
 	}
 }

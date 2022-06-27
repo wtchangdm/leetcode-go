@@ -6,12 +6,12 @@ import (
 
 func TestIsAnagram(t *testing.T) {
 	for _, v := range []struct {
-		result bool
+		answer bool
 	}{
-		{result: isAnagram("anagram", "nagaram")},
+		{answer: isAnagram("anagram", "nagaram")},
 	} {
-		if !v.result {
-			t.Error("error:", v.result)
+		if !v.answer {
+			t.Error("error:", v.answer)
 		}
 	}
 }

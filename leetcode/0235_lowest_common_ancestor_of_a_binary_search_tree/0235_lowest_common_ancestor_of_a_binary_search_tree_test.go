@@ -35,9 +35,9 @@ func TestLowestCommonAncestorIterative(t *testing.T) {
 		},
 	}
 
-	result := lowestCommonAncestorIterative(root, root.Left, root.Left.Right)
-	if result != root.Left {
-		t.Errorf("error: %v != %v", result, result.Left)
+	answer := lowestCommonAncestorIterative(root, root.Left, root.Left.Right)
+	if answer != root.Left {
+		t.Errorf("error: %v != %v", answer, answer.Left)
 	}
 }
 
@@ -70,8 +70,8 @@ func TestLowestCommonAncestorRecursive(t *testing.T) {
 		},
 	}
 
-	result := lowestCommonAncestorRecursive(root, root.Left, root.Left.Right)
-	if result != root.Left {
-		t.Errorf("error: %v != %v", result, result.Left)
+	answer := lowestCommonAncestorRecursive(root, root.Left, root.Left.Right)
+	if answer != root.Left {
+		t.Errorf("error: %v != %v", answer, answer.Left)
 	}
 }

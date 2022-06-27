@@ -9,18 +9,18 @@ func TestTopKFrequent(t *testing.T) {
 	for _, v := range []struct {
 		input  []int
 		topK   int
-		result []int
+		answer []int
 	}{
-		{input: []int{1, 1, 2, 2, 3}, topK: 2, result: []int{1, 2}},
-		{input: []int{1}, topK: 1, result: []int{1}},
+		{input: []int{1, 1, 2, 2, 3}, topK: 2, answer: []int{1, 2}},
+		{input: []int{1}, topK: 1, answer: []int{1}},
 	} {
-		answer := topKFrequent(v.input, v.topK)
-		sort.Ints(answer)
-		sort.Ints(v.result)
+		result := topKFrequent(v.input, v.topK)
+		sort.Ints(result)
+		sort.Ints(v.answer)
 
-		for i := range answer {
-			if answer[i] != v.result[i] {
-				t.Errorf("error: %d != %d", answer[i], v.result[i])
+		for i := range result {
+			if result[i] != v.answer[i] {
+				t.Errorf("error: %d != %d", result[i], v.answer[i])
 			}
 		}
 	}

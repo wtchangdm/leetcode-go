@@ -23,13 +23,13 @@ func TestReverseList(t *testing.T) {
 		},
 	}
 
-	result := []int{5, 4, 3, 2, 1}
+	answer := []int{5, 4, 3, 2, 1}
 
 	currentNode := reverseList(node)
 
-	for i := range result {
-		if currentNode.Val != result[i] {
-			t.Errorf("error: %d != %d", currentNode.Val, result[i])
+	for i := range answer {
+		if currentNode.Val != answer[i] {
+			t.Errorf("error: %d != %d", currentNode.Val, answer[i])
 		}
 		currentNode = currentNode.Next
 	}
@@ -52,13 +52,13 @@ func TestReverseListRecursive(t *testing.T) {
 		},
 	}
 
-	result := []int{5, 4, 3, 2, 1}
+	answer := []int{5, 4, 3, 2, 1}
 
 	currentNode := reverseListRecursive(node)
 
-	for i := range result {
-		if currentNode.Val != result[i] {
-			t.Errorf("error: %d != %d", currentNode.Val, result[i])
+	for i := range answer {
+		if currentNode.Val != answer[i] {
+			t.Errorf("error: %d != %d", currentNode.Val, answer[i])
 		}
 		currentNode = currentNode.Next
 	}

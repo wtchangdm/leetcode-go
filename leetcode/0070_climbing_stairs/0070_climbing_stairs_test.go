@@ -6,30 +6,30 @@ import (
 
 func TestClimbStairsTopDown(t *testing.T) {
 	for _, v := range []struct {
-		input          int
-		expectedResult int
+		input  int
+		answer int
 	}{
-		{input: 3, expectedResult: 3},
-		{input: 6, expectedResult: 13},
+		{input: 3, answer: 3},
+		{input: 6, answer: 13},
 	} {
-		result := climbStairsTopDown(v.input)
-		if result != v.expectedResult {
-			t.Errorf("error: %d != %d", result, v.input)
+		answer := climbStairsTopDown(v.input)
+		if answer != v.answer {
+			t.Errorf("error: %d != %d", answer, v.input)
 		}
 	}
 }
 
 func TestClimbStairsButtomUp(t *testing.T) {
 	for _, v := range []struct {
-		input          int
-		expectedResult int
+		input  int
+		answer int
 	}{
-		{input: 3, expectedResult: 3},
-		{input: 6, expectedResult: 13},
+		{input: 3, answer: 3},
+		{input: 6, answer: 13},
 	} {
-		result := climbStairsButtomUp(v.input)
-		if result != v.expectedResult {
-			t.Errorf("error: %d != %d", result, v.input)
+		answer := climbStairsButtomUp(v.input)
+		if answer != v.answer {
+			t.Errorf("error: %d != %d", answer, v.input)
 		}
 	}
 }

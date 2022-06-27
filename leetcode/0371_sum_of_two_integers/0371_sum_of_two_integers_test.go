@@ -8,13 +8,13 @@ func TestGetSum(t *testing.T) {
 
 	for _, v := range []struct {
 		input  int
-		result int
+		answer int
 	}{
-		{input: getSum(5, 6), result: 11},
-		{input: getSum(-5, 0), result: -5},
+		{input: getSum(5, 6), answer: 11},
+		{input: getSum(-5, 0), answer: -5},
 	} {
-		if v.input != v.result {
-			t.Errorf("error: %d != %d", v.input, v.result)
+		if v.input != v.answer {
+			t.Errorf("error: %d != %d", v.input, v.answer)
 		}
 	}
 }
