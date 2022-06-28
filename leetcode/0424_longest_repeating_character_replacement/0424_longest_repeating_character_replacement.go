@@ -7,24 +7,22 @@ func characterReplacement(s string, k int) int {
 	maxFreq := 0
 
 	for end := 0; end < len(s); end++ {
-		char := s[end]
-		freq[char]++
+		freq[s[end]]++
 
-		if freq[char] > maxFreq {
-			maxFreq = freq[char]
+		if freq[s[end]] > maxFreq {
+			maxFreq = freq[s[end]]
 		}
 
-		substrLength := end - start + 1
-		charsToReplace := substrLength - maxFreq
+		length := end - start + 1
 
-		if charsToReplace > k {
+		if length-maxFreq > k {
 			freq[s[start]]--
 			start++
-			substrLength--
+			length--
 		}
 
-		if substrLength > maxLength {
-			maxLength = substrLength
+		if length > maxLength {
+			maxLength = length
 		}
 	}
 
