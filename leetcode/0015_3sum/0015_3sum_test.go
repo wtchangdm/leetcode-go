@@ -13,11 +13,11 @@ func TestThreeSum(t *testing.T) {
 		{input: []int{}, answer: [][]int{}},
 		{input: []int{0}, answer: [][]int{}},
 	} {
-		answer := threeSum(v.input)
+		result := threeSum(v.input)
 		for i := range v.answer {
 			for j := range v.answer[i] {
-				if v.answer[i][j] != answer[i][j] {
-					t.Errorf("error: %d != %d", v.answer[i], answer[i])
+				if v.answer[i][j] != result[i][j] {
+					t.Errorf("error: %d != %d", v.answer[i], result[i])
 				}
 			}
 		}

@@ -12,10 +12,10 @@ func TestTwoSum(t *testing.T) {
 	}{
 		{input: []int{2, 7, 11, 15}, target: 9, answer: []int{0, 1}},
 	} {
-		answer := twoSum(v.input, v.target)
+		result := twoSum(v.input, v.target)
 		for i := range v.answer {
-			if v.answer[i] != answer[i] {
-				t.Errorf("error: %d != %d", v.answer[i], answer[i])
+			if v.answer[i] != result[i] {
+				t.Errorf("error: %d != %d", v.answer[i], result[i])
 			}
 		}
 	}

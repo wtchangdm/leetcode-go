@@ -12,9 +12,9 @@ func TestClimbStairsTopDown(t *testing.T) {
 		{input: 3, answer: 3},
 		{input: 6, answer: 13},
 	} {
-		answer := climbStairsTopDown(v.input)
-		if answer != v.answer {
-			t.Errorf("error: %d != %d", answer, v.input)
+		result := climbStairsTopDown(v.input)
+		if result != v.answer {
+			t.Errorf("error: %d != %d", result, v.input)
 		}
 	}
 }
@@ -27,9 +27,9 @@ func TestClimbStairsButtomUp(t *testing.T) {
 		{input: 3, answer: 3},
 		{input: 6, answer: 13},
 	} {
-		answer := climbStairsButtomUp(v.input)
-		if answer != v.answer {
-			t.Errorf("error: %d != %d", answer, v.input)
+		result := climbStairsButtomUp(v.input)
+		if result != v.answer {
+			t.Errorf("error: %d != %d", result, v.input)
 		}
 	}
 }
