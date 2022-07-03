@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 func search(nums []int, target int) int {
 	if len(nums) == 1 {
 		if nums[0] == target {
@@ -14,28 +12,26 @@ func search(nums []int, target int) int {
 	length := len(nums)
 
 	for left, right := 0, len(nums)-1; left <= right; {
-		if nums[left] < nums[right] {
+		if nums[left] < nums[right] && nums[left] <= nums[pivot] {
+			pivot = left
 			break
 		}
 
-		pivot = (left + right) / 2
+		mid := left + (right-left)/2
 
-		if nums[pivot] > nums[pivot+1] {
-			pivot = pivot + 1
-			break
+		if nums[mid] < nums[pivot] {
+			pivot = mid
 		}
 
-		if nums[pivot] > nums[right] {
-			left = pivot + 1
+		if nums[mid] >= nums[left] {
+			left = mid + 1
 		} else {
-			right = pivot - 1
+			right = mid - 1
 		}
 	}
 
-	fmt.Println(nums, nums[pivot])
-
 	for left, right := pivot, len(nums)-1+pivot; left <= right; {
-		mid := (left + right) / 2
+		mid := left + (right-left)/2
 		midValue := nums[mid%length]
 
 		if midValue == target {
