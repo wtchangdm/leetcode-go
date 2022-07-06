@@ -7,25 +7,8 @@ import (
 )
 
 func TestMergeTwoLists(t *testing.T) {
-	l1 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 4,
-			},
-		},
-	}
-
-	l2 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 3,
-			Next: &ListNode{
-				Val: 4,
-			},
-		},
-	}
+	l1 := BuildListNode([]int{1, 2, 4})
+	l2 := BuildListNode([]int{1, 3, 4})
 
 	curr := mergeTwoLists(l1, l2)
 
@@ -38,25 +21,8 @@ func TestMergeTwoLists(t *testing.T) {
 }
 
 func TestMergeTwoListsRecursive(t *testing.T) {
-	l1 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 4,
-			},
-		},
-	}
-
-	l2 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 3,
-			Next: &ListNode{
-				Val: 4,
-			},
-		},
-	}
+	l1 := BuildListNode([]int{1, 2, 4})
+	l2 := BuildListNode([]int{1, 3, 4})
 
 	curr := mergeTwoListsRecursive(l1, l2)
 

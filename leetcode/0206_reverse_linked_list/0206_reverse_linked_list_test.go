@@ -7,21 +7,7 @@ import (
 )
 
 func TestReverseList(t *testing.T) {
-	node := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val: 5,
-					},
-				},
-			},
-		},
-	}
+	node := BuildListNode([]int{1, 2, 3, 4, 5})
 
 	answer := []int{5, 4, 3, 2, 1}
 
@@ -36,21 +22,7 @@ func TestReverseList(t *testing.T) {
 }
 
 func TestReverseListRecursive(t *testing.T) {
-	node := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val: 5,
-					},
-				},
-			},
-		},
-	}
+	node := BuildListNode([]int{1, 2, 3, 4, 5})
 
 	answer := []int{5, 4, 3, 2, 1}
 
