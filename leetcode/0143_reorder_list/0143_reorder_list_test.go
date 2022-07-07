@@ -20,7 +20,7 @@ func TestReorderList(t *testing.T) {
 		answer := v.answer
 		for current != nil {
 			if current.Val != answer.Val {
-				t.Errorf("error: %d != %d", current.Val, v.answer.Val)
+				t.Errorf("error: %d != %d", current.Val, answer.Val)
 			}
 			current = current.Next
 			answer = answer.Next
