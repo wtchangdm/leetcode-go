@@ -36,3 +36,19 @@ func BreathFirstSearch(root *TreeNode) []int {
 
 	return result
 }
+
+func IsSameTree(n1, n2 *TreeNode) bool {
+	if n1 == nil && n2 == nil {
+		return true
+	}
+
+	if n1 == nil || n2 == nil {
+		return false
+	}
+
+	if n1.Val != n2.Val {
+		return false
+	}
+
+	return IsSameTree(n1.Left, n2.Left) && IsSameTree(n1.Right, n2.Right)
+}
