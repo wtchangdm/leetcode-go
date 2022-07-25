@@ -10,10 +10,11 @@ func TestTrie(t *testing.T) {
 	word := "apple"
 
 	if !trie.Search(word) {
-		t.Errorf("%s shouldn be able to find", word)
+		t.Errorf("%s should be able to find", word)
 	}
 
 	word = "app"
+
 	if trie.Search(word) {
 		t.Errorf("%s shouldn't exist", word)
 	}
@@ -24,6 +25,6 @@ func TestTrie(t *testing.T) {
 
 	trie.Insert(word)
 	if !trie.Search(word) {
-		t.Errorf("%s shouldn able to find", word)
+		t.Errorf("%s should be able to find", word)
 	}
 }
