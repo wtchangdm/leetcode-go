@@ -1,29 +1,30 @@
 package leetcode
 
-import (
-	"unicode"
-)
-
-func isAlphaNumeric(r rune) bool {
-	if (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z') || (r >= '0' && r <= '9') {
-		return true
+func getLowerCasedAlphaNumeric(r rune) rune {
+	if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') {
+		return r
 	}
-	return false
+
+	if r >= 'A' && r <= 'Z' {
+		return r + 32 // to lower case
+	}
+
+	return 0
 }
 
 func isPalindrome(s string) bool {
 	left, right := 0, len(s)-1
 
 	for left < right {
-		leftChar := unicode.ToLower(rune(s[left]))
-		rightChar := unicode.ToLower(rune(s[right]))
+		leftChar := getLowerCasedAlphaNumeric(rune(s[left]))
+		rightChar := getLowerCasedAlphaNumeric(rune(s[right]))
 
-		if !isAlphaNumeric(leftChar) {
+		if leftChar == 0 {
 			left++
 			continue
 		}
 
-		if !isAlphaNumeric(rightChar) {
+		if rightChar == 0 {
 			right--
 			continue
 		}
