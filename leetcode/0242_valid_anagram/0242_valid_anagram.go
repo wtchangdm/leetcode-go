@@ -2,28 +2,23 @@ package leetcode
 
 // https://leetcode.com/problems/valid-anagram/
 func isAnagram(s string, t string) bool {
-
 	if len(s) != len(t) {
 		return false
 	}
 
-	m := map[rune]int{}
+	countS := map[byte]int{}
+	countT := map[byte]int{}
 
-	for _, r := range s {
-		m[r]++
+	for i := range s {
+		countS[s[i]]++
+		countT[t[i]]++
 	}
 
-	for _, r := range t {
-		if _, ok := m[r]; !ok {
+	for i := range s {
+		if countS[s[i]] != countT[s[i]] {
 			return false
 		}
-
-		m[r]--
-
-		if m[r] == 0 {
-			delete(m, r)
-		}
 	}
 
-	return len(m) == 0
+	return true
 }
