@@ -29,21 +29,21 @@ func maxDepthBFS(root *TreeNode) int {
 	depth := 0
 
 	for len(queue) > 0 {
+		nDrain := len(queue)
 
-		queueLenth := len(queue)
-		for i := 0; i < queueLenth; i++ {
-			current := queue[0]
-			queue = queue[1:]
+		for i := 0; i < nDrain; i++ {
+			node := queue[i]
 
-			if current.Left != nil {
-				queue = append(queue, current.Left)
+			if node.Left != nil {
+				queue = append(queue, node.Left)
 			}
 
-			if current.Right != nil {
-				queue = append(queue, current.Right)
+			if node.Right != nil {
+				queue = append(queue, node.Right)
 			}
 		}
 
+		queue = queue[nDrain:]
 		depth++
 	}
 

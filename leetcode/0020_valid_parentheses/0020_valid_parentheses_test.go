@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestIsValidParentheses(t *testing.T) {
+func TestIsValid(t *testing.T) {
 	for _, v := range []struct {
 		input  string
 		answer bool
@@ -13,7 +13,7 @@ func TestIsValidParentheses(t *testing.T) {
 		{input: "(]", answer: false},
 	} {
 
-		if isValidParentheses(v.input) != v.answer {
+		if isValid(v.input) != v.answer {
 			t.Error("failed", v)
 		}
 	}

@@ -6,32 +6,35 @@ import . "github.com/wtchangdm/leetcode-go/structs"
  * https://leetcode.com/problems/merge-two-sorted-lists/
  */
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	if list1 == nil {
+		return list2
+	}
 
-	mergedList := &ListNode{}
+	if list2 == nil {
+		return list1
+	}
 
-	l1Current := list1
-	l2Current := list2
+	mergedList := &ListNode{} // create a dummy head
+	pinnedHead := mergedList  // save merged list head
 
-	mergedHead := mergedList
-
-	for l1Current != nil && l2Current != nil {
-		if l1Current.Val < l2Current.Val {
-			mergedHead.Next = l1Current
-			l1Current = l1Current.Next
+	for list1 != nil && list2 != nil {
+		if list1.Val <= list2.Val {
+			mergedList.Next = list1
+			list1 = list1.Next
 		} else {
-			mergedHead.Next = l2Current
-			l2Current = l2Current.Next
+			mergedList.Next = list2
+			list2 = list2.Next
 		}
-		mergedHead = mergedHead.Next
+		mergedList = mergedList.Next
 	}
 
-	if l1Current != nil {
-		mergedHead.Next = l1Current
+	if list1 != nil {
+		mergedList.Next = list1
 	} else {
-		mergedHead.Next = l2Current
+		mergedList.Next = list2
 	}
 
-	return mergedList.Next
+	return pinnedHead.Next // skip the dummy head
 }
 
 func mergeTwoListsRecursive(list1, list2 *ListNode) *ListNode {

@@ -14,25 +14,23 @@ func invertTree(root *TreeNode) *TreeNode {
 
 func invertTreeIterative(root *TreeNode) *TreeNode {
 	if root == nil {
-		return root
+		return nil
 	}
 
-	queue := []*TreeNode{}
-
-	queue = append(queue, root)
+	queue := []*TreeNode{root}
 
 	for len(queue) > 0 {
-		current := queue[0]
+		poped := queue[0]
 		queue = queue[1:]
 
-		current.Left, current.Right = current.Right, current.Left
+		poped.Left, poped.Right = poped.Right, poped.Left
 
-		if current.Left != nil {
-			queue = append(queue, current.Left)
+		if poped.Left != nil {
+			queue = append(queue, poped.Left)
 		}
 
-		if current.Right != nil {
-			queue = append(queue, current.Right)
+		if poped.Right != nil {
+			queue = append(queue, poped.Right)
 		}
 	}
 
